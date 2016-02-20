@@ -23,14 +23,14 @@ class MovieDetailsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         fetchAndSetResult()
-        
-        
-        
+   
     }
     
     func fetchAndSetResult() {
+ 
+        
         let app = UIApplication.sharedApplication().delegate as! AppDelegate
         let context = app.managedObjectContext
         let fetchRequest = NSFetchRequest(entityName: "FavMovie")
@@ -46,18 +46,18 @@ class MovieDetailsVC: UIViewController {
             
             self.movieRecord = self.favMovies[row]
             
-            configureCell()
+            configureCellDescr()
             
         }
         
         
     }
     
-    func configureCell() {
+    func configureCellDescr() {
         lblTitle.text = self.movieRecord.title
         lblDescr.text = self.movieRecord.descrWhyGood
         lblLink.text = self.movieRecord.linkImdb
         imgMovie.image = self.movieRecord.getImg()
     }
-
+    
 }
