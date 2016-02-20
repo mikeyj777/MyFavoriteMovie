@@ -18,6 +18,7 @@
 		634F75611C7816F1009B407B /* FavMovie+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634F755F1C7816F1009B407B /* FavMovie+CoreDataProperties.swift */; };
 		634F75621C7816F1009B407B /* FavMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634F75601C7816F1009B407B /* FavMovie.swift */; };
 		63B589141C78243C007AD220 /* MovieDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B589131C78243C007AD220 /* MovieDetailsVC.swift */; };
+		63B5891A1C78D2AB007AD220 /* WebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B589191C78D2AB007AD220 /* WebVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		634F755F1C7816F1009B407B /* FavMovie+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "FavMovie+CoreDataProperties.swift"; path = "../FavMovie+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		634F75601C7816F1009B407B /* FavMovie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavMovie.swift; path = ../FavMovie.swift; sourceTree = "<group>"; };
 		63B589131C78243C007AD220 /* MovieDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailsVC.swift; sourceTree = "<group>"; };
+		63B589191C78D2AB007AD220 /* WebVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				634F75451C77F96A009B407B /* ViewController.swift */,
 				634F755D1C780F5B009B407B /* SaveMovieVC.swift */,
 				63B589131C78243C007AD220 /* MovieDetailsVC.swift */,
+				63B589191C78D2AB007AD220 /* WebVC.swift */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63B5891A1C78D2AB007AD220 /* WebVC.swift in Sources */,
 				634F754C1C77F96A009B407B /* MyFavoriteMovies.xcdatamodeld in Sources */,
 				634F755E1C780F5B009B407B /* SaveMovieVC.swift in Sources */,
 				634F75621C7816F1009B407B /* FavMovie.swift in Sources */,

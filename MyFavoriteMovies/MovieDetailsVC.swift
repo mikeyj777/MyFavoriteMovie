@@ -16,7 +16,6 @@ class MovieDetailsVC: UIViewController {
     @IBOutlet var lblLink: UILabel!
     @IBOutlet var imgMovie: UIImageView!
     
-    
     var movieRecord:FavMovie!
     
     var favMovies = [FavMovie]()
@@ -58,6 +57,13 @@ class MovieDetailsVC: UIViewController {
         lblDescr.text = self.movieRecord.descrWhyGood
         lblLink.text = self.movieRecord.linkImdb
         imgMovie.image = self.movieRecord.getImg()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let webVC = WebVC()
+        
+        webVC.link = self.movieRecord.linkImdb
+        
     }
     
 }
