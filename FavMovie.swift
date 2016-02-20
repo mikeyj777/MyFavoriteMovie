@@ -23,5 +23,4 @@ class FavMovie: NSManagedObject {
         return img
     }
     
-    
 }
