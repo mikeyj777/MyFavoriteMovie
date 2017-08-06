@@ -73,6 +73,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="imgMovie" destination="J1E-8u-SdE" id="WpD-wO-2mV"/>
+                                            <outlet property="lblDescr" destination="SNj-Lt-P6z" id="a6D-Wh-zeG"/>
+                                            <outlet property="lblLink" destination="Htt-HE-Daa" id="kgc-ME-9UL"/>
+                                            <outlet property="lblTitle" destination="3Jh-M7-kOh" id="nOj-fP-9Xn"/>
                                             <segue destination="u7K-ku-z94" kind="show" id="RVn-RH-S6A"/>
                                         </connections>
                                     </tableViewCell>
@@ -103,10 +107,10 @@
             </objects>
             <point key="canvasLocation" x="1150" y="429"/>
         </scene>
-        <!--View Controller-->
+        <!--Movie DetailsVC-->
         <scene sceneID="MDq-cv-Vh1">
             <objects>
-                <viewController id="u7K-ku-z94" sceneMemberID="viewController">
+                <viewController id="u7K-ku-z94" customClass="MovieDetailsVC" customModule="MyFavoriteMovies" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yDR-7L-9EE"/>
                         <viewControllerLayoutGuide type="bottom" id="aah-sH-mj4"/>
@@ -118,7 +122,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="3Rc-tJ-A41">
                                 <rect key="frame" x="20" y="72" width="560" height="520"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AEI-TM-YMQ">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AEI-TM-YMQ" userLabel="Title Label">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="aty-Zy-wJk"/>
@@ -127,7 +131,7 @@
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="aRG-y4-i0m">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="aRG-y4-i0m" userLabel="Description Label">
                                         <rect key="frame" x="0.0" y="28" width="560" height="106"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="106" id="uT9-rE-oIV"/>
@@ -136,7 +140,7 @@
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94Y-jr-mnt">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94Y-jr-mnt" userLabel="imdbLink Label">
                                         <rect key="frame" x="0.0" y="138" width="560" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="gNN-jR-90t"/>
@@ -145,7 +149,7 @@
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dLQ-Tm-ywE">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dLQ-Tm-ywE" userLabel="Movie Image">
                                         <rect key="frame" x="0.0" y="166" width="560" height="354"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="325" id="f9R-V7-fc7"/>
@@ -162,6 +166,12 @@
                             <constraint firstItem="3Rc-tJ-A41" firstAttribute="leading" secondItem="JeE-ys-CBg" secondAttribute="leadingMargin" id="u2f-3G-Kf8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imgMovie" destination="dLQ-Tm-ywE" id="hgn-gp-s9c"/>
+                        <outlet property="lblDescr" destination="aRG-y4-i0m" id="PLX-vj-IpI"/>
+                        <outlet property="lblLink" destination="94Y-jr-mnt" id="ndt-ha-VGI"/>
+                        <outlet property="lblTitle" destination="AEI-TM-YMQ" id="SQe-c1-pu9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OzR-I1-NVV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

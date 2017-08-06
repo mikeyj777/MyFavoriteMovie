@@ -63,5 +63,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return favMovies.count
     }
 
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+
+        NSUserDefaults.standardUserDefaults().setObject(indexPath.row, forKey: "movieRow")
+        
+        NSUserDefaults.standardUserDefaults().synchronize()
+        
+        let movieDetailsVC = MovieDetailsVC()
+        
+        self.navigationController?.presentViewController(movieDetailsVC, animated: true, completion: nil)
+        
+    }
+    
 }
 

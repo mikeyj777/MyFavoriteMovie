@@ -10,20 +10,14 @@ import UIKit
 
 class FavMovieCell: UITableViewCell {
 
-    @IBOutlet var imgMovie: UIImageView!
-    @IBOutlet var lblTitle: UILabel!
-    @IBOutlet var lblDescr: UILabel!
-    @IBOutlet var lblLink: UILabel!
+    @IBOutlet weak var imgMovie: UIImageView!
+    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var lblDescr: UILabel!
+    @IBOutlet weak var lblLink: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        
     }
 
     func configureCell(movieRecord:FavMovie) {
@@ -32,5 +26,6 @@ class FavMovieCell: UITableViewCell {
         lblLink.text = movieRecord.linkImdb
         imgMovie.image = movieRecord.getImg()
     }
+    
     
 }
